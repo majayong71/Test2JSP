@@ -19,6 +19,7 @@
     </script>
 </head>
 <body> <!-- 홈페이지 기본 레이아웃 max width 80 % -->
+
 <header>
     <div class="fullLayOut">
         <nav class="navbar">
@@ -52,13 +53,65 @@
     <h2>
         Restaurant - 식당 -
     </h2>
+    <%
+        String img0,img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14,
+                img15,img16,img17;
+
+        Statement st;
+        PreparedStatement pstmt;
+        ResultSet rs;
+        Connection conn;
+
+        try { // DB 연결 구문
+            // 드라이버 로딩.
+            Class.forName("com.mysql.cj.jdbc.Driver"); // 객체화 하는 과정 , 메모리상에 잡히게 된다.
+            // 연결하기.
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nawa", "root", "QhrtnswoTkddl1!6");
+            st = conn.createStatement();
+            String sql = "SELECT * FROM CRAWLING";
+            rs = st.executeQuery(sql);
+
+            // while (rs.next())
+            // {
+            rs.next();
+            img0 = rs.getString(5); // 인덱스값 = DB 컬럼의 몇번째 값을 출력할건지
+            rs.next();              // 커서를 옮겨줌 , 다음 데이터로 넘어가게
+            img1 = rs.getString(5);
+            rs.next();
+            img2 = rs.getString(5);
+            rs.next();
+            img3 = rs.getString(5);
+            rs.next();
+            img4 = rs.getString(5);
+            rs.next();
+            img5 = rs.getString(5);
+            rs.next();
+            img6 = rs.getString(5);
+            rs.next();
+            img7 = rs.getString(5);
+            rs.next();
+            img8 = rs.getString(5);
+            rs.next();
+            img9 = rs.getString(5);
+            rs.next();
+            img10 = rs.getString(5);
+            img11 = rs.getString(5);
+            img12 = rs.getString(5);
+            img13 = rs.getString(5);
+            img14 = rs.getString(5);
+            img15 = rs.getString(5);
+            img16 = rs.getString(5);
+            img17 = rs.getString(5);
+    %>
+
     <div class="first__area">
-        <div class="contant__ranking__box">
-            <div class="card__img1">
+        <div class="contant__ranking__box">   <%-- DB에서 담아오는 이미지를 넣는 container --%>
+            <img class="card__img1" src="<%=img0%>">
+
                 <div class="ranking">
                     <h2>1</h2>
                 </div>
-            </div>
+            </img>
             <div class="card__text">
                 <h4>
                     텍스트 영역<br>
@@ -68,11 +121,11 @@
         </div>
 
         <div class="contant__ranking__box">
-            <div class="card__img2">
+            <img class="card__img2" src = "<%=img1%>">
                 <div class="ranking">
                     <h2>2</h2>
                 </div>
-            </div>
+            </img>
             <div class="card__text">
                 <h4>
                     텍스트 영역<br>
@@ -83,6 +136,7 @@
 
         <div class="contant__ranking__box">
             <div class="card__img3">
+                <img src = "<%=img2%>"/>
                 <div class="ranking">
                     <h2>3</h2>
                 </div>
@@ -97,6 +151,7 @@
 
         <div class="contant__ranking__box">
             <div class="card__img4">
+                <img src = "<%=img3%>"/>
                 <div class="ranking">
                     <h2>4</h2>
                 </div>
@@ -111,6 +166,7 @@
 
         <div class="contant__ranking__box">
             <div class="card__img4">
+                <img src = "<%=img4%>"/>
                 <div class="ranking">
                     <h2>5</h2>
                 </div>
@@ -134,6 +190,7 @@
     <div class="first__area">
         <div class="contant__ranking__box">
             <div class="card__img1">
+                <img src = "<%=img5%>"/>
                 <div class="ranking">
                     <h2>1</h2>
                 </div>
@@ -148,6 +205,7 @@
 
         <div class="contant__ranking__box">
             <div class="card__img2">
+                <img src = "<%=img6%>"/>
                 <div class="ranking">
                     <h2>2</h2>
                 </div>
@@ -162,6 +220,7 @@
 
         <div class="contant__ranking__box">
             <div class="card__img3">
+                <img src = "<%=img7%>"/>
                 <div class="ranking">
                     <h2>3</h2>
                 </div>
@@ -176,6 +235,7 @@
 
         <div class="contant__ranking__box">
             <div class="card__img4">
+                <img src = "<%=img8%>"/>
                 <div class="ranking">
                     <h2>4</h2>
                 </div>
@@ -190,6 +250,7 @@
 
         <div class="contant__ranking__box">
             <div class="card__img4">
+                <img src = "<%=img9%>"/>
                 <div class="ranking">
                     <h2>5</h2>
                 </div>
@@ -576,73 +637,27 @@
 
 <div>
     JSP . List
-
     <%
-        out.println("테스트 텍스트 제발 실행되주세요 ");
-    %>
-      <%
-
-        String img0,img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14,
-                img15,img16,img17;
-
-        Statement st;
-        PreparedStatement pstmt;
-        ResultSet rs;
-        Connection conn;
-
-        try { // DB 연결 구문
-          // 드라이버 로딩.
-          Class.forName("com.mysql.cj.jdbc.Driver"); // 객체화 하는 과정 , 메모리상에 잡히게 된다.
-          // 연결하기.
-          conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/nawa", "root", "QhrtnswoTkddl1!6");
-          out.println(" ");
-          out.println("연결 됐습니다.");
-          out.println(" ");
-          st = conn.createStatement();
-          String sql = "SELECT * FROM CRAWLING";
-          rs = st.executeQuery(sql);
-
-          // while (rs.next())
-          // {
-          rs.next();
-          img0 = rs.getString(5);
-
-          out.println(img0);
-
-      %>
-      <img src = "<%=img0%>"/>
-
-
-      <%
-
-
-
-          /* out.println
-           (
-                   rs.getString(1) + "\t" +
-                   rs.getString(2) + "\t" +
-                   rs.getString(3) + "\t" +
-                   rs.getString(4) + "\t" +
-                   rs.getString(5) + "\t"
-           ); */
-          //  }
-
-
+            /* out.println
+             (
+                     rs.getString(1) + "\t" +
+                     rs.getString(2) + "\t" +
+                     rs.getString(3) + "\t" +
+                     rs.getString(4) + "\t" +
+                     rs.getString(5) + "\t"
+             ); */
+            //  }
         } catch (ClassNotFoundException e) {
-          out.println(" 에러가 났습니다. (드라이버 로딩 실패) " + e.getMessage());
-          e.printStackTrace(); // 에러가 어디서 났는지 알려주고 전체적인 결과를 노출해준다.
+            out.println(" 에러가 났습니다. (드라이버 로딩 실패) " + e.getMessage());
+            e.printStackTrace(); // 에러가 어디서 났는지 알려주고 전체적인 결과를 노출해준다.
         } catch (SQLException e) {
-          out.println("에러: " + e);
-          e.printStackTrace();
+            out.println("에러: " + e);
+            e.printStackTrace();
         } catch (Exception e)
         {
-          out.println("데이터베이스 검색 오류 : " + e.getMessage());
+            out.println("데이터베이스 검색 오류 : " + e.getMessage());
         }
-
-
-
-      %>
-
+    %>
 </div>
 
 </body>
